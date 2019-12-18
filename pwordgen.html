@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var passWordLength = parseInt(prompt("How long do you want your password?"))
+        var lowerCase = "abcdegfhijklmnopqrstuvwxyz"
+        var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+        var passwordPool = ""  
+        var myArray = []
+        var tflc = confirm("Do you want lower-case letter included?")
+        var tfuc = confirm("Do you want upper-case letter included?")
+        
+       
+         
+        if (tflc === true) {
+            passwordPool += lowerCase
+        }
+
+        if (tfuc === true) {
+            passwordPool += upperCase
+        }
+
+        
+
+        passwordPool = passwordPool.split("");
+
+
+        for (i = 0; i < passWordLength; i++) {
+            var cc = Math.floor(Math.random() * passwordPool.length)
+            myArray.push(passwordPool[cc])
+        }
+
+    console.log(myArray.join(""))
+
+
+    </script>
+</body>
+
+</html>
