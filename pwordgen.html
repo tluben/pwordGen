@@ -3,22 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 
 <body>
+    
+<h1 id="button"></h1>
+<button id="copy">Copy Password!</button>
     <script>
         var passWordLength = parseInt(prompt("How long do you want your password?"))
         var lowerCase = "abcdegfhijklmnopqrstuvwxyz"
-        var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+        var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var specialCase = "~!@#$%^&*()-_+=|::?" 
+        var numberCase = "0123456789"
         var passwordPool = ""  
         var myArray = []
         var tflc = confirm("Do you want lower-case letter included?")
         var tfuc = confirm("Do you want upper-case letter included?")
+        var tfsc = confirm("Do you want special cases included?")
+        var tfnc = confirm("Do you want numbers included?")
         
-       
+        
          
         if (tflc === true) {
             passwordPool += lowerCase
@@ -26,6 +33,14 @@
 
         if (tfuc === true) {
             passwordPool += upperCase
+        }
+
+        if (tfsc === true){
+            passwordPool += specialCase
+        }
+
+        if (tfnc === true ) {
+            passwordPool += numberCase
         }
 
         
@@ -39,9 +54,15 @@
         }
 
     console.log(myArray.join(""))
+        var output = myArray.join("")
 
+        var htmlSelector = document.getElementById("button")
+        htmlSelector.innerText=output
 
+        var copyText = document.getElementById("#button");
+        copyText.select()
     </script>
 </body>
+
 
 </html>
